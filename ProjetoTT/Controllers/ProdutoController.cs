@@ -18,7 +18,7 @@ namespace ProjetoTT.Controllers
             if (ModelState.IsValid)
             {
                 _produtoRepositorio.AdicionarProduto(produto);
-                return RedirectToAction("Cadastro");
+                return RedirectToAction("CadastroProd");
             }
             return View(produto);
         }
