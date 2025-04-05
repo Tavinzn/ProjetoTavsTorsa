@@ -1,6 +1,10 @@
+using ProjetoTT.Repositorio;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<UsuarioRepositorio>();
+builder.Services.AddScoped<ProdutoRepositorio>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

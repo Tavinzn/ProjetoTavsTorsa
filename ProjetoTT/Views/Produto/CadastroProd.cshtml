@@ -1,0 +1,22 @@
+﻿@model ProjetoTT.Models.Produto;
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<h1>Cadastro</h1>
+
+<form asp-action="Cadastro" method="get">
+    <div>
+        <label>Nome:</label>
+        <input type="text" name="Nome" required />
+    </div>
+    <div>
+        <label>Descrição:</label>
+        <input type="text" name="descricao" required />
+    </div>
+    <div>
+        <label>Preço</label>
+        <input type="number" name="preco" required />
+    </div>
+    <button type="submit">Cadastro</button>
+</form>
