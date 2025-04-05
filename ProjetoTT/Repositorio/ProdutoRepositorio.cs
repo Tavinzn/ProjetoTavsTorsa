@@ -21,7 +21,6 @@ namespace ProjetoTT.Repositorio
                 cmd.Parameters.AddWithValue("@Descricao",produto.Descricao);
                 cmd.Parameters.AddWithValue("@Preco",produto.Preco);
                 cmd.ExecuteNonQuery();
-
             }
         }
 
