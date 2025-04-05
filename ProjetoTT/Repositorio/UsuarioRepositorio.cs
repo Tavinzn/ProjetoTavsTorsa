@@ -19,12 +19,12 @@ namespace ProjetoTT.Repositorio
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
+                conexao.Open();
                 MySqlCommand cmd = new("INSERT INTO Usuario (Nome, Email, Senha) VALUES (@Nome,@Email,@Senha)", conexao);
                 cmd.Parameters.AddWithValue("@Nome", usuario.Nome);
                 cmd.Parameters.AddWithValue("@Email", usuario.Email);
                 cmd.Parameters.AddWithValue("@Senha", usuario.Senha);
                 cmd.ExecuteNonQuery();
-
             }
         }
 

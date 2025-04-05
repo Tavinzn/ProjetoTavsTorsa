@@ -30,7 +30,7 @@ namespace ProjetoEcommerce2A.Controllers
             if (usuario != null && usuario.Senha == senha)
             {
                 // Autenticação bem-sucedida
-                return RedirectToAction("Index", "Cliente");
+                return RedirectToAction("Index", "home");
             }
             ModelState.AddModelError("", "Email ou senha inválidos.");
             return View();
@@ -47,7 +47,7 @@ namespace ProjetoEcommerce2A.Controllers
             if (ModelState.IsValid)
             {
                 _usuarioRepositorio.AdicionarUsuario(usuario);
-                return RedirectToAction("Login");
+                return RedirectToAction("index", "sucedido");
             }
             return View(usuario);
         }

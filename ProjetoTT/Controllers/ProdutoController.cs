@@ -7,6 +7,10 @@ namespace ProjetoTT.Controllers
     public class ProdutoController : Controller
     {
         private readonly ProdutoRepositorio _produtoRepositorio;
+        public ProdutoController(ProdutoRepositorio produtoRepositorio)
+        {
+            _produtoRepositorio = produtoRepositorio;
+        }
         public IActionResult Cadastro()
         {
             return View();
@@ -18,7 +22,7 @@ namespace ProjetoTT.Controllers
             if (ModelState.IsValid)
             {
                 _produtoRepositorio.AdicionarProduto(produto);
-                return RedirectToAction("CadastroProd");
+                return RedirectToAction("index", "Home");
             }
             return View(produto);
         }
